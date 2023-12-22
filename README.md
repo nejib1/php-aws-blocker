@@ -2,7 +2,9 @@
 
 ![AWS IP Blocker](https://i.imgur.com/8z60Lxx.png)
 
-If you are like me, you might find yourself bombarded by unwanted traffic and requests originating from Amazon Compute resources. To address this, I created a PHP script that automatically fetches the latest AWS IP ranges from Amazon's public JSON file and updates `iptables` rules to block these IP addresses. The script optionally uses Tor for anonymous data fetching.
+If you're experiencing the same issues as I have, you might find that your server is constantly bombarded with unwanted traffic and requests coming from Amazon Compute resources. 
+To tackle this problem, I developed a PHP script that automatically retrieves the latest AWS IP ranges from Amazon's public JSON file.
+The script then updates the `iptables`  rules to block these IP addresses, offering an optional feature to use Tor for anonymous data fetching.
 
 ## Prerequisites
 
