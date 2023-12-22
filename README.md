@@ -57,6 +57,10 @@ The script then updates the `iptables`  rules to block these IP addresses, offer
 - Understand the implications, as this might block legitimate traffic.
 - Testing in a controlled environment before using it in production is highly recommended.
 
+## Author
+
+**Nejib BEN AHMED**
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
