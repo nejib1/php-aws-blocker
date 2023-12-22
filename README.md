@@ -1,4 +1,4 @@
-# AWS IP Blocker Script
+# PHP AWS IP Blocker Script
 
 ![AWS IP Blocker](https://i.imgur.com/8z60Lxx.png)
 
