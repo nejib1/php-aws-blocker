@@ -8,7 +8,6 @@
  * anonymous data fetching.
  * 
  * Author: Nejib BEN AHMED
- * (Replace /sbin/iptables and /sbin/ip6tables by your own iptables path)
  */
 
 function getJsonData($url) {
@@ -54,6 +53,7 @@ $ip_ranges = array_merge(
 
 
 // Fetch all current iptables rules
+// You can replace /sbin/iptables and /sbin/ip6tables by your own iptables path
 exec("/sbin/iptables -S INPUT", $currentV4Rules);
 exec("/sbin/ip6tables -S INPUT", $currentV6Rules);
 
