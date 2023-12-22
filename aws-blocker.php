@@ -1,5 +1,14 @@
 #!/usr/bin/env php
 <?php
+/**
+ * AWS IP Blocker Script
+ * 
+ * This script automatically fetches the latest AWS IP ranges and updates
+ * iptables rules to block these IP addresses. It optionally uses Tor for
+ * anonymous data fetching.
+ * 
+ * Author: Nejib BEN AHMED
+ */
 
 function getJsonData($url) {
     $torProxy = '127.0.0.1:9050'; // Tor proxy address and port
