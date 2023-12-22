@@ -1,6 +1,6 @@
-# PHP AWS IP Blocker Script
+# AWS IP Blocker Script
 
-This PHP script automatically fetches the latest AWS IP ranges from Amazon's public JSON file and updates `iptables` rules to block these IP addresses. It optionally uses Tor to anonymously fetch the JSON data.
+If you are like me, you might find yourself bombarded by unwanted traffic and requests originating from Amazon Compute resources. To address this, I created a PHP script that automatically fetches the latest AWS IP ranges from Amazon's public JSON file and updates `iptables` rules to block these IP addresses. The script optionally uses Tor for anonymous data fetching.
 
 ## Prerequisites
 
@@ -12,8 +12,8 @@ This PHP script automatically fetches the latest AWS IP ranges from Amazon's pub
 ## Installation
 
 1. **Install Tor (Optional)**:
-   - Tor is optional and is used for anonymous fetching of the JSON data. If you prefer not to use Tor, skip this step and modify the script to not use the Tor proxy.
-   - If you choose to use Tor:
+   - Using Tor is optional and it's used for anonymously fetching the JSON data. If you prefer not to use Tor, simply skip this step and modify the script to not use the Tor proxy.
+   - If opting to use Tor:
      - Debian/Ubuntu: `sudo apt-get install tor`
      - CentOS/RedHat: `sudo yum install tor`
      - macOS (using Homebrew): `brew install tor`
@@ -32,26 +32,26 @@ This PHP script automatically fetches the latest AWS IP ranges from Amazon's pub
    - Execute the script with `sudo ./block_aws_ips.php`.
 
 3. **Optional: Set Up a Cron Job**:
-   - To run the script automatically once a day, you can set up a cron job. 
+   - For automatic daily execution, set up a cron job. 
    - Edit the crontab for the root user with `sudo crontab -e`.
-   - Add the following line to run the script every day at a specific time (e.g., at 3:00 AM):
+   - Add the following line to run the script every day at a specific time (e.g., 3:00 AM):
      ```
      0 3 * * * /path/to/block_aws_ips.php
      ```
 
 ## How It Works
 
-- The script fetches the latest set of IP ranges used by AWS services.
-- If Tor is installed and configured, it uses Tor to anonymously fetch the JSON data.
-- It parses the JSON file to extract both IPv4 and IPv6 ranges.
-- For each IP range, the script checks if a corresponding rule already exists in `iptables`.
-- If a rule does not exist, it adds a new rule to block traffic from that IP range.
+- The script fetches the latest IP ranges used by AWS services.
+- It uses Tor, if installed and configured, to anonymously retrieve the JSON data.
+- It then parses the JSON file to extract both IPv4 and IPv6 ranges.
+- The script checks if each IP range already has a corresponding rule in `iptables`.
+- New rules are added only for IP ranges not already blocked.
 
 ## Caution
 
-- Running this script will modify your `iptables` rules and can block a significant number of IP addresses.
-- Ensure you understand the implications of running this script, as it might block legitimate traffic.
-- It is highly recommended to test the script in a controlled environment before using it in production.
+- This script modifies `iptables` rules and may block a significant number of IP addresses.
+- Understand the implications, as this might block legitimate traffic.
+- Testing in a controlled environment before using it in production is highly recommended.
 
 ## License
 
