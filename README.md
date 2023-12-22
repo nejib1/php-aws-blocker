@@ -30,17 +30,17 @@ The script then updates the `iptables`  rules to block these IP addresses, offer
 ## Usage
 
 1. **Make the Script Executable**:
-   - Run `chmod +x block_aws_ips.php` to make the script executable.
+   - Run `chmod +x aws-blocker.php` to make the script executable.
 
 2. **Run the Script**:
-   - Execute the script with `sudo ./block_aws_ips.php`.
+   - Execute the script with `sudo ./aws-blocker.php`.
 
 3. **Optional: Set Up a Cron Job**:
    - For automatic daily execution, set up a cron job. 
    - Edit the crontab for the root user with `sudo crontab -e`.
    - Add the following line to run the script every day at a specific time (e.g., 3:00 AM):
      ```
-     0 3 * * * /path/to/block_aws_ips.php
+     0 3 * * * /path/to/aws-blocker.php
      ```
 
 ## How It Works
