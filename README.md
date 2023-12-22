@@ -1,4 +1,4 @@
-# AWS IP Blocker Script
+# PHP AWS IP Blocker Script
 
 This PHP script automatically fetches the latest AWS IP ranges from Amazon's public JSON file and updates `iptables` rules to block these IP addresses. It optionally uses Tor to anonymously fetch the JSON data.
 
