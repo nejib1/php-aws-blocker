@@ -4,9 +4,7 @@
 
 If you're experiencing the same issues as I had, you might find that your server is constantly bombarded with unwanted traffic and requests coming from Amazon Compute resources. 
 
-To tackle this problem, I developed a PHP script that automatically retrieves the latest AWS IP ranges from Amazon's public JSON file.
-
-The script then updates the `iptables`  rules to <span style="text-decoration: underline;">**block**</span> these IP addresses.
+To tackle this problem, I developed a PHP script that automatically retrieves the latest AWS IP ranges from Amazon's public JSON file. The script then updates the `iptables`  rules to <span style="text-decoration: underline;">**block**</span> these IP addresses.
 
 ## Prerequisites
 
