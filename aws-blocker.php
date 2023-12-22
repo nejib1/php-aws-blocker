@@ -8,6 +8,7 @@
  * anonymous data fetching.
  * 
  * Author: Nejib BEN AHMED
+ * (Replace /sbin/iptables and /sbin/ip6tables by your own iptables path)
  */
 
 function getJsonData($url) {
