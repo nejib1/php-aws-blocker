@@ -34,7 +34,7 @@ The script then updates the `iptables`  rules to <span style="text-decoration: u
 1. **Make the Script Executable**:
    - Run `chmod +x aws-blocker.php` to make the script executable.
 
-2. **Run the Script**:
+2. **Run the Script in CLI mode**:
    - Execute the script with `sudo ./aws-blocker.php`.
 
 3. **Optional: Set Up a Cron Job**:
