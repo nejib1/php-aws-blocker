@@ -51,16 +51,17 @@ $ip_ranges = array_merge(
     array_column($data['ipv6_prefixes'] ?? [], 'ipv6_prefix')
 );
 
+
 // Fetch all current iptables rules
-exec("iptables -S INPUT", $currentV4Rules);
-exec("ip6tables -S INPUT", $currentV6Rules);
+exec("/sbin/iptables -S INPUT", $currentV4Rules);
+exec("/sbin/ip6tables -S INPUT", $currentV6Rules);
 
 foreach ($ip_ranges as $ip) {
     $ip_version = strpos($ip, ':') === false ? '' : '6';
     $currentRules = $ip_version === '6' ? $currentV6Rules : $currentV4Rules;
 
     if (!isIpBlocked($ip, $currentRules)) {
-        $command = "ip{$ip_version}tables -A INPUT -s $ip -j DROP";
+        $command = "/sbin/ip{$ip_version}tables -A INPUT -s $ip -j DROP";
         exec($command, $output, $return_var);
         if ($return_var !== 0) {
             echo "Failed to execute: $command\n";
