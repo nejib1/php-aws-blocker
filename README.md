@@ -6,6 +6,7 @@ If you're experiencing the same issues as I had, you might find that your server
 
 To tackle this problem, I developed a PHP script that automatically retrieves the latest AWS IP ranges from Amazon's public JSON file. The script then updates the `iptables`  rules to <span style="text-decoration: underline;">**block**</span> these IP addresses.
 
+(The image above is a screenshot of the `iftop` command in linux in action. iftop is a tool used for monitoring network bandwidth in real-time) 
 ## Prerequisites
 
 - PHP CLI
